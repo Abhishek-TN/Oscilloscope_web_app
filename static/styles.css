@@ -1,0 +1,21 @@
+.display {
+    width: 100%;
+    background-color: rgb(183, 179, 179);
+    border: 1px solid rgb(255, 252, 252); /* Just for visualization */
+    height: 410px; /* Just for visualization */
+  }
+  
+  .media-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 20px; /* Adjust the size of the icon as needed */
+    margin: 0 18px;
+    align-items: center; /* Add some margin between buttons */
+  }
+  
+  .media-button#auto:hover {
+    color: white !important;
+  }
+  
+  

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar bg-body-tertiary" style="background-color: rgb(254, 254, 254) !important">
+        <div class="container-fluid">
+            <button type="button" class="btn btn-primary" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">HORIZONTAL</button>
+            <button type="button" class="btn btn-primary" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AUTO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <button type="button" class="btn btn-primary" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">SINGLE</button>
+            <button type="button" class="btn btn-primary" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">TRIGGER</button>
+        </div>
+    </nav>
+
+    <div class="display">
+        <img src="{{ url_for('plot_png') }}" alt="Plot">
+    </div>
+
+    <footer>
+        <nav class="navbar bg-body-tertiary" style="background-color: rgb(254, 254, 254) !important">
+            <div class="container-fluid">   
+                <button type="button" class="btn btn-primary" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">CHANNELS</button>
+                <button type="button" class="btn btn-primary" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">CHANNEL 1</button>
+
+                <!-- Rewind button -->
+                <button class="media-button" onclick="alert('Rewind clicked!')">
+                    <i class="material-icons">fast_rewind</i>
+                </button>
+
+                <button class="media-button" onclick="alert('Start clicked!')">
+                    <i class="material-icons">play_arrow</i>
+                </button>
+                
+                <!-- Forward button -->
+                <button class="media-button" onclick="alert('Forward clicked!')">
+                    <i class="material-icons">fast_forward</i>
+                </button>
+                <button type="button" class="btn btn-primary" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">CHANNEL 2</button>
+                <button type="button" class="btn btn-primary" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;QUICK&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            </div>
+        </nav>
+    </footer>
+</body>
+</html>
