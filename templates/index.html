@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,25 +9,74 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>Document</title>
 </head>
+    <style>
+        .btn-hover:hover {
+            background-color: white !important;
+            color: black !important;
+        }
+    </style>
+</head>
 <body>
     <nav class="navbar bg-body-tertiary" style="background-color: rgb(254, 254, 254) !important">
         <div class="container-fluid">
-            <button type="button" class="btn btn-primary" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">HORIZONTAL</button>
-            <button type="button" class="btn btn-primary" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AUTO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-            <button type="button" class="btn btn-primary" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">SINGLE</button>
-            <button type="button" class="btn btn-primary" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">TRIGGER</button>
+            <button id="horizontal-btn" type="button" class="btn btn-primary btn-hover" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">HORIZONTAL</button>
+            
+            
+            <!-- Dropdown list 
+            <div id="wave-type-dropdown" style="display: none;">
+                <select id="wave-type-select" class="form-select" aria-label="Default select example">
+                    <option value="sin">Sin Wave</option>
+                    <option value="box">Box Wave</option>
+                    <option value="cos">Cosine Wave</option>
+                </select>
+            </div>  -->
+
+
+
+            <button type="button" class="btn btn-primary btn-hover" onmouseover="this.classList.add('btn-hover')" onmouseout="this.classList.remove('btn-hover')" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AUTO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <button type="button" class="btn btn-primary btn-hover" onmouseover="this.classList.add('btn-hover')" onmouseout="this.classList.remove('btn-hover')" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">SINGLE</button>
+            <button type="button" class="btn btn-primary btn-hover" onmouseover="this.classList.add('btn-hover')" onmouseout="this.classList.remove('btn-hover')" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">TRIGGER</button>
         </div>
     </nav>
 
     <div class="display">
         <img src="{{ url_for('plot_png') }}" alt="Plot">
     </div>
+  
+<!-- Modal -->
+<div class="modal fade" id="waveModal" tabindex="-1" aria-labelledby="waveModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="waveModalLabel">Select Wave Type</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <select id="wave-type-select" class="form-select" aria-label="Default select example">
+                    <option value="sin">Sin Wave</option>
+                    <option value="box">Box Wave</option>
+                    <option value="cos">Cosine Wave</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <!-- Add any other buttons here if needed -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-bVXp8o/d0g5fQZ/HaPzL63FCeYU2wrrFqR7nGtOtZAIzdoixrKPgFJa0O8/bzrGw" crossorigin="anonymous"></script>
+
+
 
     <footer>
         <nav class="navbar bg-body-tertiary" style="background-color: rgb(254, 254, 254) !important">
             <div class="container-fluid">   
-                <button type="button" class="btn btn-primary" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">CHANNELS</button>
-                <button type="button" class="btn btn-primary" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">CHANNEL 1</button>
+                <button type="button" class="btn btn-primary btn-hover" onmouseover="this.classList.add('btn-hover')" onmouseout="this.classList.remove('btn-hover')" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">CHANNELS</button>
+                <button type="button" class="btn btn-primary btn-hover" onmouseover="this.classList.add('btn-hover')" onmouseout="this.classList.remove('btn-hover')" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">CHANNEL 1</button>
 
                 <!-- Rewind button -->
                 <button class="media-button" onclick="alert('Rewind clicked!')">
@@ -41,10 +91,13 @@
                 <button class="media-button" onclick="alert('Forward clicked!')">
                     <i class="material-icons">fast_forward</i>
                 </button>
-                <button type="button" class="btn btn-primary" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">CHANNEL 2</button>
-                <button type="button" class="btn btn-primary" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;QUICK&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                <button type="button" class="btn btn-primary btn-hover" onmouseover="this.classList.add('btn-hover')" onmouseout="this.classList.remove('btn-hover')" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">CHANNEL 2</button>
+                <button type="button" class="btn btn-primary btn-hover" onmouseover="this.classList.add('btn-hover')" onmouseout="this.classList.remove('btn-hover')" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;QUICK&nbsp;&nbsp;&nbsp;&nbsp;</button>
             </div>
         </nav>
     </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
 </body>
 </html>
