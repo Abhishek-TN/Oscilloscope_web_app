@@ -43,7 +43,7 @@
         <img src="{{ url_for('plot_png') }}" alt="Plot">
     </div>
   
-<!-- Modal -->
+<!-- 
 <div class="modal fade" id="waveModal" tabindex="-1" aria-labelledby="waveModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -60,12 +60,12 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <!-- Add any other buttons here if needed -->
+                 Add any other buttons here if needed 
             </div>
         </div>
     </div>
 </div>
-
+Modal -->
 
 <!-- Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-bVXp8o/d0g5fQZ/HaPzL63FCeYU2wrrFqR7nGtOtZAIzdoixrKPgFJa0O8/bzrGw" crossorigin="anonymous"></script>
@@ -94,10 +94,22 @@
                 <button type="button" class="btn btn-primary btn-hover" onmouseover="this.classList.add('btn-hover')" onmouseout="this.classList.remove('btn-hover')" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">CHANNEL 2</button>
                 <button type="button" class="btn btn-primary btn-hover" onmouseover="this.classList.add('btn-hover')" onmouseout="this.classList.remove('btn-hover')" style="margin-top: 3px;background-color: rgb(108, 110, 247); border: 1px solid black; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;QUICK&nbsp;&nbsp;&nbsp;&nbsp;</button>
             </div>
+            
         </nav>
     </footer>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
 
 </body>
 </html>
