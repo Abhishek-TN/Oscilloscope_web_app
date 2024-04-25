@@ -6,3 +6,8 @@ function toggleWindow() {
         window.style.display = "none";
     }
 }
+
+function closeWindow() {
+    var window = document.getElementById("window");
+    window.style.display = "none";
+}
