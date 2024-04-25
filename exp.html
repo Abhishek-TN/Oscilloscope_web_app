@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Buttons</title>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 100px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .image {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+        .window {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <button class="dropdown" onclick="toggleWindow()">
+        Button 1
+    </button>
+    <button class="dropdown">
+        Button 2
+        <div class="dropdown-content">
+            <a href="#">Option 1</a>
+            <a href="#">Option 2</a>
+        </div>
+    </button>
+    <button class="dropdown">
+        Button 3
+        <div class="dropdown-content">
+            <a href="#">Option 1</a>
+            <a href="#">Option 2</a>
+        </div>
+    </button>
+    <button class="dropdown">
+        Button 4
+        <div class="dropdown-content">
+            <a href="#">Option 1</a>
+            <a href="#">Option 2</a>
+        </div>
+    </button>
+    <button class="dropdown">
+        Button 5
+        <div class="dropdown-content">
+            <a href="#">Option 1</a>
+            <a href="#">Option 2</a>
+        </div>
+    </button>
+</div>
+
+<!-- Image -->
+<div class="image">
+    <img src="https://cdn.sparkfun.com/assets/e/5/1/2/6/52f29ce3ce395f8c1b8b4569.png" alt="Your Image">
+    <div class="window" id="window">
+        <input type="range" min="1" max="100" value="50" class="slider" id="slider">
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <button class="dropdown">
+        Button 1
+        <div class="dropdown-content">
+            <a href="#">Option 1</a>
+            <a href="#">Option 2</a>
+        </div>
+    </button>
+    <button class="dropdown">
+        Button 2
+        <div class="dropdown-content">
+            <a href="#">Option 1</a>
+            <a href="#">Option 2</a>
+        </div>
+    </button>
+    <button class="dropdown">
+        Button 3
+        <div class="dropdown-content">
+            <a href="#">Option 1</a>
+            <a href="#">Option 2</a>
+        </div>
+    </button>
+    <button class="dropdown">
+        Button 4
+        <div class="dropdown-content">
+            <a href="#">Option 1</a>
+            <a href="#">Option 2</a>
+        </div>
+    </button>
+    <button class="dropdown">
+        Button 5
+        <div class="dropdown-content">
+            <a href="#">Option 1</a>
+            <a href="#">Option 2</a>
+        </div>
+    </button>
+</div>
+
+<script>
+    function toggleWindow() {
+        var window = document.getElementById("window");
+        if (window.style.display === "none") {
+            window.style.display = "block";
+        } else {
+            window.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
